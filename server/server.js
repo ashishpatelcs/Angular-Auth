@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const apiRoutes = require('./routes/api');
 const config = require('./environments/env');
 const PORT = config.ENV.PORT;
 const app = express();
 
+app.use(cors);
 app.use(bodyParser.json());
 app.use('/api', apiRoutes);
 
