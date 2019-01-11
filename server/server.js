@@ -7,7 +7,7 @@ const config = require('./environments/env');
 const PORT = config.ENV.PORT;
 const app = express();
 
-app.use(cors);
+app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', apiRoutes);
 
